@@ -30,6 +30,7 @@ public class Water : MonoBehaviour
         _meshFilter.mesh.RecalculateNormals();
 
         _scrollOffset += (Time.deltaTime * _scrollSpeed * 1) * 0.1f;
-        _mat.mainTextureOffset = new Vector2(_scrollOffset * 0.5f, _scrollOffset * 0.5f);
+        float scrollOffsetValue = _scrollOffset * 0.5f;
+        _mat.mainTextureOffset = new Vector2(scrollOffsetValue, scrollOffsetValue);
     }
 }
