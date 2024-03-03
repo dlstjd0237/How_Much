@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float Speed = 4.0f;
     [SerializeField] private float _steeringTorque = 5.0f;
     private Rigidbody _rigidbody;
-    private float _modifier;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -24,7 +23,7 @@ public class Player : MonoBehaviour
         }
         if (_input.XInput != 0)
         {
-            _modifier = _input.XInput;
+            float _modifier = _input.XInput;
             _modifier = Mathf.Clamp(_modifier, -1f, 1f);
             _rigidbody.AddRelativeTorque(new Vector3(0f, _steeringTorque, -_steeringTorque * 0.5f) * _modifier, ForceMode.Acceleration);
         }

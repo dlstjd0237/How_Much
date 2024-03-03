@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-[CreateAssetMenu(menuName = "Input/InputReader")]
+[CreateAssetMenu(menuName = "SO/Input/InputReader")]
 public class InputReader : ScriptableObject, PlayerInput.IPlayerActions
 {
     public float XInput { get; private set; }
