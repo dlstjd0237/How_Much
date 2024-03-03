@@ -30,7 +30,7 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions
     public void OnMouse(InputAction.CallbackContext context)
     {
         Vector2 mouseInput = context.ReadValue<Vector2>().normalized;
-        XMouseInput = mouseInput.x/* > 0 ? 1 : mouseInput.x < 0 ? -1 : 0*/;
-        YMouseInput = mouseInput.y /*> 0 ? 1 : mouseInput.y < 0 ? -1 : 0*/;
+        XMouseInput = mouseInput.x;
+        YMouseInput = mouseInput.y;
     }
 }

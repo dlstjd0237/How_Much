@@ -5,15 +5,30 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private InputReader _input;
+    [SerializeField] private float Speed = 4.0f;
+    [SerializeField] private float _steeringTorque = 5.0f;
     private Rigidbody _rigidbody;
-
+    private float _modifier;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
-        _rigidbody.velocity = new Vector3(_input.YInput * 8, _rigidbody.velocity.y, _input.XInput * 8);
+        if (_input.YInput > -0.01f)
+        {
+            _rigidbody.AddForce(transform.forward * Speed * _input.YInput, ForceMode.Acceleration);
+        }
+        if (_input.XInput != 0)
+        {
+            _modifier = _input.XInput;
+            _modifier = Mathf.Clamp(_modifier, -1f, 1f);
+            _rigidbody.AddRelativeTorque(new Vector3(0f, _steeringTorque, -_steeringTorque * 0.5f) * _modifier, ForceMode.Acceleration);
+        }
+
     }
 }
+
