@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/11_UIToolkit/styles/InventoryUI.uss?fileID=7433441132597879392&amp;guid=ece270647ab7ad8459f473d0e1250ed6&amp;type=3#InventoryUI" />
+    <ui:VisualElement name="windowbox-contain" class="windowbox-contain">
+        <ui:VisualElement name="tab_bar_box-contain" class="tab_bar_box-contain">
+            <ui:VisualElement name="tab_bar-contain" class="tab_bar-contain">
+                <ui:VisualElement name="tab_bar_button-contain" class="tab_bar_button-contain">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="map_icon-button" class="icon" />
+                </ui:VisualElement>
+                <ui:VisualElement name="tab_bar_button-contain" class="tab_bar_button-contain">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="inventory_icon-button" class="icon" />
+                </ui:VisualElement>
+                <ui:VisualElement name="tab_bar_button-contain" class="tab_bar_button-contain">
+                    <ui:Button parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quest_icon-button" class="icon" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

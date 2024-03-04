@@ -23,66 +23,11 @@ public class WelcomeWindow : EditorWindow
         if (EditorApplication.isPlayingOrWillChangePlaymode)
             return;
 
-        OpenWindow();
+ 
     }
 
-    [MenuItem("Tools/EmaceArt/Welcome Window")]
-    private static void OpenWindow()
-    {
-        EditorWindow panel = GetWindow<WelcomeWindow>();
-        panel.titleContent = new GUIContent("Hello Developer!", Resources.Load<Texture2D>("Favi_top"));
-        //  panel.minSize = new Vector2(600, Mathf.Min(Screen.currentResolution.height, 862));
-        // panel.maxSize = new Vector2(600, Mathf.Min(Screen.currentResolution.height, 862));
-        //panel.ShowUtility();
-    }
 
-    private void OnEnable()
-    {
-        var style = Resources.Load<GUISkin>("GUISkin");
-        textureButton = style.GetStyle("textureButton");
-        headingText = style.GetStyle("headingText");
-        commonText = style.GetStyle("commonText");
 
-        top = Resources.Load<Texture2D>("EA_Top");
-
-        image1 = Resources.Load<Texture2D>("Btn_01");
-
-        linkButton = Resources.Load<Texture2D>("button_free_zone");
-
-        logo = Resources.Load<Texture2D>("Logo");
-    }
-
-    private void OnGUI()
-    {
-        scrollIndex = GUILayout.BeginScrollView(scrollIndex);
-        GUILayout.BeginVertical();
-
-        DrawHeader();
-        GUILayout.Space(20f);
-        DrawBody();
-        GUILayout.Space(20f);
-        DrawFooter();
-
-        GUILayout.EndVertical();
-        GUILayout.EndScrollView();
-    }
-
-    private void DrawHeader()
-    {
-        if (GUILayout.Button(top, textureButton))
-            Application.OpenURL("https://assetstore.unity.com/packages/3d/environments/fantasy/slavic-medieval-village-town-interior-and-exterior-pack-environm-137794");
-    }
-
-    private void DrawBody()
-    {
-        GUILayout.Label("Thanks for checkin Slavica Lite", headingText);
-        GUILayout.Space(1f);
-        GUILayout.Label("This pack perfect match with the Medieval Slavica Town Full!", commonText);
-        GUILayout.Space(20f);
-
-        if (GUILayout.Button(image1, textureButton))
-            Application.OpenURL("https://assetstore.unity.com/packages/3d/environments/fantasy/slavic-medieval-village-town-interior-and-exterior-pack-environm-137794");
-    }
 
     private void DrawFooter()
     {
