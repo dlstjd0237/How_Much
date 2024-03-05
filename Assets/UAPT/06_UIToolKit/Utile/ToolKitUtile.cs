@@ -134,7 +134,7 @@ namespace UAPT.Utile
         /// </summary>
         /// <param name="_btn"></param>
         /// <param name="_action"></param>
-        public static void SetHoverEvent(Button _btn, UnityEngine.Events.UnityAction _action)
+        public static void SetHoverEvent( Button _btn, UnityEngine.Events.UnityAction _action)
         {
             if (_btn == null)
                 return;

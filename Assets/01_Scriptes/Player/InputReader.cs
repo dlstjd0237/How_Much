@@ -51,17 +51,18 @@ public class InputReader : ScriptableObject, PlayerInput.IPlayerActions, PlayerI
     {
         if (context.performed)
         {
-            if (_isOpenMap) //¸ÊÀÌ ÄÑÁ®ÀÖ´Ù¸é
+            if (_isOpenMap) //¸ÊÀÌ ²¨Á®ÀÖ´Ù¸é
             {
                 _playerInput.Player.Disable();
-                ClosedMapEvent?.Invoke();
+                OpenMapEvent?.Invoke();
+                _isOpenMap = !_isOpenMap;
             }
-            else if (!_isOpenMap) // ¸ÊÀÌ ²¨Á®ÀÖ´Ù¸é
+            else if (!_isOpenMap) // ¸ÊÀÌ ÄÑÁ®ÀÖ´Ù¸é
             {
                 _playerInput.Player.Enable();
-                OpenMapEvent?.Invoke();
+                ClosedMapEvent?.Invoke();
+                _isOpenMap = !_isOpenMap;
             }
-            _isOpenMap = !_isOpenMap;
         }
     }
 
